@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace ProductReviewManagement_Linq_CSharp
 {
@@ -48,6 +49,12 @@ namespace ProductReviewManagement_Linq_CSharp
             productManagement.RetrieveIdAndReview(list);
             Console.WriteLine("Skip_Top_Five_Records");
             productManagement.SkipTopFiveRecord(list);
+            Console.WriteLine("***Data_Table***");
+            DataTable data = productManagement.CreateTable(list);
+            foreach (var table in list)
+            {
+                data.Rows.Add(table.ProductId, table.UserId, table.Rating, table.Review, table.isLike);
+            }
             Console.ReadKey();
         }
     }

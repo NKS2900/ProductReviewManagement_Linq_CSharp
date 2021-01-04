@@ -63,5 +63,19 @@ namespace ProductReviewManagement_Linq_CSharp
 
             DisplayRecord(recordData);
         }
+        public DataTable CreateTable(List<ProductReview> productReview)
+        {
+            var tableColumn1 = new DataColumn("ProductId", typeof(int));
+            dataTable.Columns.Add(tableColumn1);
+            var tableColumn2 = new DataColumn("UserId", typeof(int));
+            dataTable.Columns.Add(tableColumn2);
+            var tableColumn3 = new DataColumn("Rating", typeof(double));
+            dataTable.Columns.Add(tableColumn3);
+            var tableColumn4 = new DataColumn("Review");
+            dataTable.Columns.Add(tableColumn4);
+            var tableColumn5 = new DataColumn("isLike", typeof(bool));
+            dataTable.Columns.Add(tableColumn5);
+            return dataTable;
+        }
     }
 }
