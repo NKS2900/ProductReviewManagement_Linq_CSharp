@@ -42,6 +42,11 @@ namespace ProductReviewManagement_Linq_CSharp
             {
                 Console.WriteLine("Product id = " + lists.ProductId + " User id = " + lists.UserId + " Rating is = " + lists.Rating + " Review is = " + lists.Review + " isLike = " + lists.isLike);
             }
+
+            Console.WriteLine("***TOP_THREE_REVIEWS***");
+            ProductReviewManagement productManagement = new ProductReviewManagement();
+            productManagement.TopRecord(list);
+            Console.ReadKey();
         }
     }
 }
