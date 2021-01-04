@@ -108,5 +108,15 @@ namespace ProductReviewManagement_Linq_CSharp
                               select ProductReview).ToList();
             DisplayRecord(recordData);
         }
+
+        public void GetRecord_ByUserID(List<ProductReview> listproductReview)
+        {
+            
+            var recordData = (from ProductReview in listproductReview
+                              where (ProductReview.UserId == 10)
+                              orderby ProductReview.Rating descending
+                              select ProductReview).ToList();
+            DisplayRecord(recordData);
+        }
     }
 }
