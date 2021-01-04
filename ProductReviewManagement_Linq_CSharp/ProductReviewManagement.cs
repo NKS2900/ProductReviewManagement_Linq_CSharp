@@ -54,5 +54,14 @@ namespace ProductReviewManagement_Linq_CSharp
                 Console.WriteLine(list.ProductID + "------>" + list.Review);
             }
         }
+
+        public void SkipTopFiveRecord(List<ProductReview> listProductReview)
+        {
+            var recordData = (from productReview in listProductReview
+                              orderby productReview.Rating descending
+                              select productReview).Skip(5).ToList();
+
+            DisplayRecord(recordData);
+        }
     }
 }
