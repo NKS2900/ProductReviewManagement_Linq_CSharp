@@ -100,5 +100,13 @@ namespace ProductReviewManagement_Linq_CSharp
                 Console.WriteLine(list.id + "----->" + list.avg);
             }
         }
+
+        public void GetNiceReview(List<ProductReview> listproductReview)
+        { 
+            var recordData = (from ProductReview in listproductReview
+                              where (ProductReview.Review.Equals("Nice"))
+                              select ProductReview).ToList();
+            DisplayRecord(recordData);
+        }
     }
 }
