@@ -56,6 +56,8 @@ namespace ProductReviewManagement_Linq_CSharp
                 data.Rows.Add(table.ProductId, table.UserId, table.Rating, table.Review, table.isLike);
             }
             productManagement.RetrieveRecordsWithisLikeTrue(data);
+            Console.WriteLine("Get_Average_Rating_Of_Product");
+            productManagement.GetAvgRatings(list);
             Console.ReadKey();
         }
     }
