@@ -13,11 +13,26 @@ namespace ProductReviewManagement_Linq_CSharp
         {
             var recordData = (from productReview in listProductReview
                               orderby productReview.Rating descending
-                              select productReview).Take(3);
+                              select productReview).Take(3).ToList();
 
-            foreach (var list in recordData)
+            DisplayRecord(recordData);
+
+        }
+        public void SelectRecords(List<ProductReview> listProductReview)
+        {
+            var recordData = (from productReview in listProductReview
+                              where (productReview.ProductId == 1 || productReview.ProductId == 4 || productReview.ProductId == 9)
+                              && productReview.Rating > 3
+                              select productReview).ToList();
+
+            DisplayRecord(recordData);
+        }
+
+        public void DisplayRecord(List<ProductReview> record)
+        {
+            foreach (var lists in record)
             {
-                Console.WriteLine("Product id = " + list.ProductId + " User id = " + list.UserId + " Rating is = " + list.Rating + " Review is = " + list.Review + " isLike = " + list.isLike);
+                Console.WriteLine("Product id = " + lists.ProductId + " User id = " + lists.UserId + " Rating is = " + lists.Rating + " Review is = " + lists.Review + " isLike = " + lists.isLike);
             }
         }
     }
