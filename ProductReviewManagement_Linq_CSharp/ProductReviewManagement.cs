@@ -8,8 +8,8 @@ namespace ProductReviewManagement_Linq_CSharp
     class ProductReviewManagement
     {
         public readonly DataTable dataTable = new DataTable();
-        
-        public void TopRecord ( List<ProductReview> listProductReview )
+
+        public void TopRecord(List<ProductReview> listProductReview)
         {
             var recordData = (from productReview in listProductReview
                               orderby productReview.Rating descending
@@ -27,12 +27,21 @@ namespace ProductReviewManagement_Linq_CSharp
 
             DisplayRecord(recordData);
         }
-
         public void DisplayRecord(List<ProductReview> record)
         {
             foreach (var lists in record)
             {
                 Console.WriteLine("Product id = " + lists.ProductId + " User id = " + lists.UserId + " Rating is = " + lists.Rating + " Review is = " + lists.Review + " isLike = " + lists.isLike);
+            }
+        }
+
+        public void CountOfRectords(List<ProductReview> listProductReview)
+        {
+            var recordData = listProductReview.GroupBy(x => x.ProductId).Select(x => new { ProductID = x.Key, Count = x.Count() });
+
+            foreach (var list in recordData)
+            {
+                Console.WriteLine(list.ProductID + "-----" + list.Count);
             }
         }
     }

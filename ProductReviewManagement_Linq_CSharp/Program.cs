@@ -11,7 +11,7 @@ namespace ProductReviewManagement_Linq_CSharp
             List<ProductReview> list = new List<ProductReview>()
             {
             new ProductReview() { ProductId = 1, UserId = 1, Rating = 5, Review= "Good", isLike=true },
-            new ProductReview() { ProductId = 2, UserId = 2, Rating = 4, Review = "Good", isLike=true },
+            new ProductReview() { ProductId = 1, UserId = 2, Rating = 4, Review = "Good", isLike=true },
             new ProductReview() { ProductId = 3, UserId = 3, Rating = 3, Review = "Good", isLike=true },
             new ProductReview() { ProductId = 4, UserId = 4, Rating = 4, Review = "Good", isLike=true },
             new ProductReview() { ProductId = 5, UserId = 5, Rating = 5, Review = "Good", isLike=true },
@@ -22,7 +22,7 @@ namespace ProductReviewManagement_Linq_CSharp
             new ProductReview() { ProductId = 10, UserId = 5, Rating = 5, Review = "Bad", isLike=false },
             new ProductReview() { ProductId = 11, UserId = 6, Rating = 4, Review = "Good", isLike=true },
             new ProductReview() { ProductId = 12, UserId = 7, Rating = 3, Review = "Good", isLike=true },
-            new ProductReview() { ProductId = 13, UserId = 8, Rating = 1, Review = "Bad", isLike=true },
+            new ProductReview() { ProductId = 12, UserId = 8, Rating = 1, Review = "Bad", isLike=true },
             new ProductReview() { ProductId = 14, UserId = 11, Rating = 2, Review = "Good", isLike=true },
             new ProductReview() { ProductId = 15, UserId = 5, Rating = 5, Review = "Bad", isLike=false },
             new ProductReview() { ProductId = 16, UserId = 6, Rating = 4, Review = "Good", isLike=true },
@@ -43,6 +43,8 @@ namespace ProductReviewManagement_Linq_CSharp
             productManagement.TopRecord(list);
             Console.WriteLine("Select Record 1 , 4 , 9 Whos Rating > 3");
             productManagement.SelectRecords(list);
+            Console.WriteLine("Count_of_Records_Using_GroupBy");
+            productManagement.CountOfRectords(list);
             Console.ReadKey();
         }
     }
