@@ -55,6 +55,7 @@ namespace ProductReviewManagement_Linq_CSharp
             {
                 data.Rows.Add(table.ProductId, table.UserId, table.Rating, table.Review, table.isLike);
             }
+            productManagement.RetrieveRecordsWithisLikeTrue(data);
             Console.ReadKey();
         }
     }
