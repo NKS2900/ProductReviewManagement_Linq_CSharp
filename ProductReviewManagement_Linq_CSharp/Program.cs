@@ -45,6 +45,7 @@ namespace ProductReviewManagement_Linq_CSharp
             productManagement.SelectRecords(list);
             Console.WriteLine("Count_of_Records_Using_GroupBy");
             productManagement.CountOfRectords(list);
+            productManagement.RetrieveIdAndReview(list);
             Console.ReadKey();
         }
     }
